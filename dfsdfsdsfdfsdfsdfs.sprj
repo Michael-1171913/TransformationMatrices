@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<project version="2">
+	<pipeline>
+		<pass name="Simple" type="shader" active="true" patchverts="1">
+			<shader type="vs" path="shaders\dfsdfsdsfdfsdfsdfs_SimpleVS.glsl" entry="main" />
+			<shader type="ps" path="shaders\dfsdfsdsfdfsdfsdfs_SimplePS.glsl" entry="main" />
+			<inputlayout>
+				<item value="Position" semantic="POSITION" />
+				<item value="Normal" semantic="NORMAL" />
+				<item value="Texcoord" semantic="TEXCOORD0" />
+			</inputlayout>
+			<rendertexture />
+			<items>
+				<item name="Box" type="geometry">
+					<type>Cube</type>
+					<width>1</width>
+					<height>1</height>
+					<depth>1</depth>
+					<pitch>0.943075955</pitch>
+					<yaw>1.35459256</yaw>
+					<x>-0.104191303</x>
+					<y>-0.0948736668</y>
+					<z>-0.0942306519</z>
+					<topology>TriangleList</topology>
+				</item>
+			</items>
+			<itemvalues />
+			<variables>
+				<variable type="float4x4" name="matVP" system="ViewProjection" />
+				<variable type="float4x4" name="matGeo" system="GeometryTransform" />
+				<variable type="float3" name="cameraPos" system="CameraPosition3" />
+				<variable type="float3" name="cameraRot" system="CameraDirection3" />
+				<variable type="float" name="iTime" system="Time" />
+				<variable type="float3" name="boxPos" function="ObjectProperty">
+					<row>
+						<value>Box</value>
+						<value>Position</value>
+					</row>
+				</variable>
+				<variable type="float3" name="boxRot" function="ObjectProperty">
+					<row>
+						<value>Box</value>
+						<value>Rotation</value>
+					</row>
+				</variable>
+				<variable type="float3" name="boxScale" function="ObjectProperty">
+					<row>
+						<value>Box</value>
+						<value>Scale</value>
+					</row>
+				</variable>
+			</variables>
+			<macros />
+		</pass>
+	</pipeline>
+	<objects />
+	<cameras />
+	<settings>
+		<entry type="file" name="Simple" shader="ps" />
+		<entry type="file" name="Simple" shader="vs" />
+		<entry type="pinned" name="boxPos" owner="Simple" />
+		<entry type="camera" fp="false">
+			<distance>8</distance>
+			<pitch>38</pitch>
+			<yaw>73</yaw>
+			<roll>360</roll>
+		</entry>
+		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
+		<entry type="usealpha" val="false" />
+	</settings>
+	<plugindata />
+</project>
