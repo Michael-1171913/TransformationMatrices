@@ -16,18 +16,12 @@
 					<width>1</width>
 					<height>1</height>
 					<depth>1</depth>
-					<pitch>0.943075955</pitch>
-					<yaw>1.35459256</yaw>
-					<x>-0.104191303</x>
-					<y>-0.0948736668</y>
-					<z>-0.0942306519</z>
 					<topology>TriangleList</topology>
 				</item>
 			</items>
 			<itemvalues />
 			<variables>
 				<variable type="float4x4" name="matVP" system="ViewProjection" />
-				<variable type="float4x4" name="matGeo" system="GeometryTransform" />
 				<variable type="float3" name="cameraPos" system="CameraPosition3" />
 				<variable type="float3" name="cameraRot" system="CameraDirection3" />
 				<variable type="float" name="iTime" system="Time" />
@@ -49,6 +43,32 @@
 						<value>Scale</value>
 					</row>
 				</variable>
+				<variable type="bool" name="isPerspectiveProjection">
+					<row>
+						<value>false</value>
+					</row>
+				</variable>
+				<variable type="float4" name="LeftRightTopBottom">
+					<row>
+						<value>-5</value>
+						<value>5</value>
+						<value>-5</value>
+						<value>5</value>
+					</row>
+				</variable>
+				<variable type="float2" name="NearFar">
+					<row>
+						<value>0.319999993</value>
+						<value>0.660000026</value>
+					</row>
+				</variable>
+				<variable type="float3" name="cameraPosition">
+					<row>
+						<value>-2</value>
+						<value>0.100000001</value>
+						<value>0.200000003</value>
+					</row>
+				</variable>
 			</variables>
 			<macros />
 		</pass>
@@ -58,11 +78,14 @@
 	<settings>
 		<entry type="file" name="Simple" shader="ps" />
 		<entry type="file" name="Simple" shader="vs" />
-		<entry type="pinned" name="boxPos" owner="Simple" />
+		<entry type="pinned" name="isPerspectiveProjection" owner="Simple" />
+		<entry type="pinned" name="LeftRightTopBottom" owner="Simple" />
+		<entry type="pinned" name="NearFar" owner="Simple" />
+		<entry type="pinned" name="cameraPosition" owner="Simple" />
 		<entry type="camera" fp="false">
-			<distance>8</distance>
-			<pitch>38</pitch>
-			<yaw>73</yaw>
+			<distance>10</distance>
+			<pitch>41</pitch>
+			<yaw>25</yaw>
 			<roll>360</roll>
 		</entry>
 		<entry type="clearcolor" r="0" g="0" b="0" a="0" />
